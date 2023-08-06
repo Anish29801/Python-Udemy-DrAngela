@@ -1,7 +1,6 @@
-def fun():
+def func(): #delcaring a function func
     print ("Have fun! while coding python") 
-
-
+    
 print("Hello world!")
 
-fun()
+func() # calling function
