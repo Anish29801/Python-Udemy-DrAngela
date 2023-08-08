@@ -1,16 +1,13 @@
 
-
-import random
 import requests
 
-url = 'https://random-word-api.herokuapp.com/all'
-
-word_list = requests.get(url)
-if(word_list.status_code == 200):
-    
-    chosen_word = random.choice(word_list)
+url = 'https://random-word-api.herokuapp.com/word'
+print('Starting game please wait...')
+try:
+    response = requests.get(url)
+    word = response.json()
+    chosen_word = word[0]
     word_length = len(chosen_word)
-
     end_of_game = False
     lives = 6
 
@@ -47,5 +44,7 @@ if(word_list.status_code == 200):
             end_of_game = True
 
             print("You win.")
-else:
-    print("Error loading data.")
+except Exception as e:
+    print('Error loading game')
+    
+ 
