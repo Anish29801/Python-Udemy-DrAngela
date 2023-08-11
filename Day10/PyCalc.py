@@ -22,9 +22,20 @@ def menu():
     print("*")
     print("/")
     oper = input("Enter the operation you are interested in? ")
-    num1 = int(input("Enter a number : "))
-    num2 = int(input("Enter a number : "))
-    res = calc(num1, num2,oper)
-    print (res)
+    if(oper == '+' or 
+       oper == '-'or
+       oper == '*'
+       or oper== '/'):
+        num1 = int(input("Enter a number : "))
+        num2 = int(input("Enter a number : "))
+        res = calc(num1, num2,oper)
+        print (res)
+    else:
+        print("Invalid operator Entered")
     
-menu()
+while True:
+    menu()
+    choice= input("Enter your choice Y/N: ")
+    choice = choice.lower()
+    if(choice == 'n'):
+        break
